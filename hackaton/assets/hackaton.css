@@ -10,21 +10,21 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
 .container{
     display: grid;
     grid-template-columns: repeat(3 1fr);
     grid-template-rows: repeat(3 1fr);
     grid-gap: 10px;
-}
-
-.container > div{
     background: url('./wallstreet-night.jpeg');
-    background-size:cover;
+    background: cover;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    grid-template-columns: 3;
+    grid-template-rows: 3;
 }
 
-.header::after{
+header::after{
     content:'';
     display: table;
     clear: both;
@@ -77,13 +77,12 @@ body{
         width: 100%;
     }
 
-
 .logo {
     float: left;
     padding: 5px ;
 }
 
-.main{
+main{
     display: flex;
     justify-content: space-between;
 }
@@ -103,15 +102,13 @@ width: 80%;
 height: 100%;
 }
 
-
-
-.text{
+context{
     font-size: 22px;
     padding: 5px 5px;
     width: 50%;
 }
 
-.footer{
+footer{
     display: flex;
     vertical-align: bottom;
     flex-direction: row;
@@ -124,24 +121,27 @@ height: 100%;
 }
 
 @media  (max-width: 460px) {
-.footer{
+footer{
     flex-direction: column;
 }
 
-.main{
+main{
     flex-direction: column;
 }
 
-.text{
+context{
     width: 100%;
 }
 
 .video iframe{
     width: 100%;
-    height: auto;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
 }
 
-.header{
+header{
     height: 100%;
 }
 
