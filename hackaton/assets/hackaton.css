@@ -1,139 +1,103 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background: dimgrey;
     color: ghostwhite;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background: url('./wallstreet-night.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.container{
+.container {
     display: grid;
     grid-template-columns: repeat(3 1fr);
     grid-template-rows: repeat(3 1fr);
     grid-gap: 10px;
-    background: url('./wallstreet-night.jpeg');
-    background: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100%;
     grid-template-columns: 3;
     grid-template-rows: 3;
+    min-height: 100vh;
 }
 
-header::after{
+header::after {
     content:'';
     display: table;
     clear: both;
-    }
+    height: 100%;
+}
 
-    li{
+li {
     color: white;
-    }
+}
 
-    nav ul{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
-    nav li {
-        display: inline-block;
-        margin-left: 60px;
-        padding-top: 25px;
-        position: relative;
-    }
+nav li {
+    display: inline-block;
+    margin-left: 60px;
+    padding-top: 25px;
+    position: relative;
+}
 
-    nav{
-        float: right;
-        padding: 5px;
-    }
+nav {
+    float: right;
+    padding: 5px;
+}
 
-    nav a{
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 22px;
-    }
+nav a {
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 22px;
+    transition-duration: 0.5s;
+}
 
-    nav a:hover {
-        color:red;
-        }
+nav a:hover {
+    color:rgb(46, 11, 202);
+}
 
-    nav a::before{
-        content:'';
-        display: block;
-        height: 5px;    
-        width: 100%;
-        background-color: royalblue;
-        top: 0;
-        width: 0%;
-    }
+nav a::before {
+    content:'';
+    display: block;
+    height: 5px;    
+    width: 100%;
+    background-color: royalblue;
+    top: 0;
+    width: 0%;
+}
 
-    nav a:hover::before{
-        width: 100%;
-    }
+nav a:hover::before {
+    width: 100%;
+}
 
 .logo {
     float: left;
-    padding: 5px ;
+    padding: 5px;
 }
 
-main{
+main {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 
-.video{
+.video {
     padding: 5px;
     width:50%;
     justify-self: center;
     position: relative;
 }
 
-.video iframe{
-position: absolute;
-top: 0;
-right: 0;
-width: 80%;
-height: 100%;
-}
-
-context{
-    font-size: 22px;
-    padding: 5px 5px;
-    width: 50%;
-}
-
-footer{
-    display: flex;
-    vertical-align: bottom;
-    flex-direction: row;
-    padding: 5px;
-    justify-content: space-between ;
-}
-
-.footertext{
-    align-self: flex-end;
-}
-
-@media  (max-width: 460px) {
-footer{
-    flex-direction: column;
-}
-
-main{
-    flex-direction: column;
-}
-
-context{
-    width: 100%;
-}
-
-.video iframe{
+.video iframe {
     width: 100%;
     height: 100%;
     position: relative;
@@ -141,9 +105,36 @@ context{
     top: 0;
 }
 
-header{
-    height: 100%;
+section{
+    font-size: 22px;
+    padding: 5px 5px;
+    width: 100%;
 }
 
+footer {
+    display: flex;
+    vertical-align: bottom;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: space-between;
 }
 
+.footertext {
+    align-self: flex-end;
+}
+
+@media only screen and (min-width: 760px) {
+
+    main {
+        flex-direction: row;
+    }
+
+    footer {
+        flex-direction: row;
+    }
+
+    .video iframe {
+        justify-self: center;
+    }
+
+}  
